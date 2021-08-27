@@ -1,0 +1,47 @@
+﻿<Window x:Class="Inventory_Management_System.AddProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Inventory_Management_System"
+        mc:Ignorable="d"
+        Title="Add Product" Height="450" Width="800" Background="Gray" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Add Product" HorizontalAlignment="Left" Margin="38,18,0,0" VerticalAlignment="Top" Width="102" FontWeight="Bold" FontSize="14" Height="28"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="495,31,0,0" VerticalAlignment="Top" Width="75" Click="BtnSearch_Click"/>
+        <TextBox x:Name="txtbxSearch" HorizontalAlignment="Left" Height="23" Margin="583,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <Button x:Name="btnAddPart" Content="Add" HorizontalAlignment="Left" Margin="655,177,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddPart_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="655,328,0,0" VerticalAlignment="Top" Width="75" Click="BtnDelete_Click"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="571,379,0,0" VerticalAlignment="Top" Width="75" Click="BtnSave_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="655,379,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="18,110,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="117,110,0,0" TextWrapping="Wrap" Text="Auto Gen - Disabled" VerticalAlignment="Top" Width="213" IsEnabled="False"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="18,141,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbxProductName" HorizontalAlignment="Left" Height="26" Margin="117,141,0,0" TextWrapping="Wrap" Text="Product Name" VerticalAlignment="Top" Width="213" GotFocus="TxtbxProductName_GotFocus" LostFocus="TxtbxProductName_LostFocus"/>
+        <Label Content="Inv" HorizontalAlignment="Left" Margin="18,172,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbxInventory" HorizontalAlignment="Left" Height="26" Margin="117,172,0,0" TextWrapping="Wrap" Text="Inv" VerticalAlignment="Top" Width="213" LostFocus="TxtbxInventory_LostFocus" GotFocus="TxtbxInventory_GotFocus"/>
+        <Label Content="Price/Cost" HorizontalAlignment="Left" Margin="18,203,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbxPriceCost" HorizontalAlignment="Left" Height="26" Margin="117,203,0,0" TextWrapping="Wrap" Text="Price/Cost" VerticalAlignment="Top" Width="213" GotFocus="TxtbxPriceCost_GotFocus" LostFocus="TxtbxPriceCost_LostFocus"/>
+        <Label Content="Max" HorizontalAlignment="Left" Margin="18,234,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbxMax" HorizontalAlignment="Left" Height="26" Margin="117,234,0,0" TextWrapping="Wrap" Text="Max" VerticalAlignment="Top" Width="79" GotFocus="TxtbxMax_GotFocus" LostFocus="TxtbxMax_LostFocus"/>
+        <Label Content="Min" HorizontalAlignment="Left" Margin="207,234,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbxMin" HorizontalAlignment="Left" Height="26" Margin="251,234,0,0" TextWrapping="Wrap" Text="Min" VerticalAlignment="Top" Width="79" LostFocus="TxtbxMin_LostFocus" GotFocus="TxtbxMin_GotFocus"/>
+        <DataGrid x:Name="dgrdPartsGlobal" HorizontalAlignment="Left" Height="99" Margin="346,68,0,0" VerticalAlignment="Top" Width="384" AutoGenerateColumns="False" AlternatingRowBackground="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" SelectionMode="Single" CanUserResizeRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Part ID" Binding="{Binding PartID}" IsReadOnly="True" Width="2*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Part Name" Binding="{Binding PartName}" IsReadOnly="True" Width="4*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Inventory Level" Binding="{Binding InventoryLevel}"  Width="3*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Price/Cost Per Unit" Binding="{Binding price}" IsReadOnly="True" Width="3*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dgrdPartsProduct" HorizontalAlignment="Left" Height="120" Margin="346,203,0,0" VerticalAlignment="Top" Width="384" AutoGenerateColumns="False" AlternatingRowBackground="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" SelectionMode="Single" CanUserResizeRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Part ID" Binding="{Binding PartID}" IsReadOnly="True" Width="2*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Part Name" Binding="{Binding PartName}" IsReadOnly="True" Width="4*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Inventory Level" Binding="{Binding InventoryLevel}"  Width="3*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Price/Cost Per Unit" Binding="{Binding price}" IsReadOnly="True" Width="3*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

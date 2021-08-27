@@ -1,0 +1,44 @@
+﻿<Window x:Name="wndInventoryMain" x:Class="Inventory_Management_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Inventory_Management_System"
+        mc:Ignorable="d"
+        Title="Inventory Management System" Height="568.487" Width="1163.826" WindowStyle="ToolWindow" ResizeMode="NoResize" Background="Gray">
+    <Grid Margin="0,0,-8,-31">
+        <Label Content="Inventory Management System" HorizontalAlignment="Left" Margin="48,34,0,0" VerticalAlignment="Top" Height="30" Width="227" FontWeight="Bold" FontSize="14"/>
+        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="322" Margin="48,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="509" StrokeThickness="2"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Height="44" Margin="969,470,0,0" VerticalAlignment="Top" Width="148" Click="BtnExit_Click"/>
+        <Label Content="Parts" HorizontalAlignment="Left" Height="28" Margin="64,125,0,0" VerticalAlignment="Top" Width="59" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="btnPartSearch" Content="Search" HorizontalAlignment="Left" Height="29" Margin="266,125,0,0" VerticalAlignment="Top" Width="99" Click="BtnPartSearch_Click"/>
+        <TextBox x:Name="txtbxPartSearch" HorizontalAlignment="Left" Height="23" Margin="370,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+        <Button x:Name="btnAddPart" Content="Add" HorizontalAlignment="Left" Margin="302,366,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddPart_Click"/>
+        <Button x:Name="btnModifyPart" Content="Modify" HorizontalAlignment="Left" Margin="383,366,0,0" VerticalAlignment="Top" Width="75" Click="BtnModifyPart_Click"/>
+        <Button x:Name="btnDeletePart" Content="Delete" HorizontalAlignment="Left" Margin="463,366,0,0" VerticalAlignment="Top" Width="75" Click="BtnDeletePart_Click"/>
+        <Rectangle Fill="Gray" HorizontalAlignment="Left" Height="322" Margin="581,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="536" StrokeThickness="2"/>
+        <Label Content="Products" HorizontalAlignment="Left" Height="28" Margin="610,125,0,0" VerticalAlignment="Top" Width="69" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="btnProductSearch" Content="Search" HorizontalAlignment="Left" Height="29" Margin="820,124,0,0" VerticalAlignment="Top" Width="99" Click="BtnProductSearch_Click"/>
+        <TextBox x:Name="txtbxProductSearch" HorizontalAlignment="Left" Height="23" Margin="924,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+        <Button x:Name="btnAddProduct" Content="Add" HorizontalAlignment="Left" Margin="861,366,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddProduct_Click"/>
+        <Button x:Name="btnModifyProduct" Content="Modify" HorizontalAlignment="Left" Margin="942,366,0,0" VerticalAlignment="Top" Width="75" Click="BtnModifyProduct_Click"/>
+        <Button x:Name="btnDeleteProduct" Content="Delete" HorizontalAlignment="Left" Margin="1022,366,0,0" VerticalAlignment="Top" Width="75" Click="BtnDeleteProduct_Click"/>
+        <DataGrid x:Name="dgrdParts" HorizontalAlignment="Left" Height="161" Margin="64,182,0,0" VerticalAlignment="Top" Width="477" AutoGenerateColumns="False" AlternatingRowBackground="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" SelectionMode="Single" CanUserResizeRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Part ID" Binding="{Binding Path=PartID}" IsReadOnly="True" Width="2*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Part Name" Binding="{Binding Path=PartName}" IsReadOnly="True" Width="4*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Inventory Level" Binding="{Binding Path=InventoryLevel}"  Width="3*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Price/Cost Per Unit" Binding="{Binding Path=price}" IsReadOnly="True" Width="3*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dgrdProducts" HorizontalAlignment="Left" Height="161" Margin="615,182,0,0" VerticalAlignment="Top" Width="477" AutoGenerateColumns="False" AlternatingRowBackground="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" SelectionMode="Single" CanUserResizeRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Product ID" Binding="{Binding ProductID}" IsReadOnly="True" Width="2*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Part Name" Binding="{Binding PartName}" IsReadOnly="True" Width="4*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Inventory Level" Binding="{Binding InventoryLevel}"  Width="3*"/>
+                <DataGridTextColumn CanUserSort="False" CanUserReorder="False" Header="Price/Cost Per Unit" Binding="{Binding price}" IsReadOnly="True" Width="3*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
